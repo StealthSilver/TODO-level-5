@@ -1,0 +1,68 @@
+FRONEND
+
+1. Create a React App Using Vite: npm create vite@latest
+2. install dependencies : npm install
+                          npm install axios
+3. Inside src/, create a components folder create two files TodoForm.jsx and TodoList.jsx
+4. TodoForm.jsx: Handles adding new todos
+    The TodoForm component allows users to:
+
+	1.	Add a new task.
+	2.	Send the task to the backend via an API call.
+
+    import use state and axios
+
+    create a function for htese tasks
+    1.	State Management:
+	•	const [task, setTask] = useState('');
+	•	task: Stores the value entered by the user.
+	•	setTask: Updates the value of task.
+	2.	Event Handlers:
+	•	handleSubmit: Triggered when the form is submitted.
+	•	Sends the task to the backend using axios.post.
+	•	Notifies the parent component via the onTaskAdded prop.
+	3.	Form Elements:
+	•	<input>:
+	•	Captures the user’s input.
+	•	Uses value and onChange to synchronize with the task state.
+	•	<button>:
+	•	Submits the form to add a new task.
+    4. The TodoForm component receives a prop:
+	•	onTaskAdded: A function passed by the parent component to handle adding the new task.
+
+
+5. TodoList.jsx: Displays and manages the list of todos.
+
+    The TodoList component:
+
+	1.	Fetches the list of To-Do items from the backend.
+	2.	Displays the tasks in a styled list.
+	3.	Provides buttons to update, complete, or delete a task.
+	4.	Communicates with the backend to perform these actions.
+
+    import React, { useState, useEffect } from 'react'; // For state and lifecycle hooks
+    import axios from 'axios'; // For API calls
+
+    Define functions to handle updates, completion, and deletion:
+    Render the list of tasks dynamically with buttons for actions:
+
+6. style all the components
+6. App.jsx Main component to connect everything
+    The App.jsx file:
+
+	1.	Serves as the central container for the app.
+	2.	Displays the form to add new tasks (TodoForm.jsx).
+	3.	Displays the task list (TodoList.jsx).
+	4.	Manages communication between components if needed.
+
+
+    import React, { useState } from 'react'; // React and state management
+    import './App.css'; // Styles for the application
+    import TodoForm from './components/TodoForm'; // Form for adding tasks
+    import TodoList from './components/TodoList'; // List of tasks
+
+    Start by creating a functional component for the App:
+    State Management with useState:
+    Callback Function (handleTaskAdded):
+    Component Integration: The TodoForm and TodoList components are displayed inside the App container
+7. App.css will be used for styling
